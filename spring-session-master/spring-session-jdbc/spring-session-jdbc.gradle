@@ -1,0 +1,23 @@
+apply plugin: 'io.spring.convention.spring-module'
+
+description = "Spring Session and Spring JDBC integration"
+
+dependencies {
+	compile project(':spring-session-core')
+	compile "org.springframework:spring-context"
+	compile "org.springframework:spring-jdbc"
+
+	testCompile "javax.servlet:javax.servlet-api"
+	testCompile "org.springframework:spring-web"
+	testCompile "org.springframework.security:spring-security-core"
+
+	integrationTestCompile "com.h2database:h2"
+	integrationTestCompile "mysql:mysql-connector-java"
+	integrationTestCompile "org.apache.derby:derby"
+	integrationTestCompile "org.hsqldb:hsqldb"
+	integrationTestCompile "org.mariadb.jdbc:mariadb-java-client"
+	integrationTestCompile "org.postgresql:postgresql"
+	integrationTestCompile "org.testcontainers:mariadb"
+	integrationTestCompile "org.testcontainers:mysql"
+	integrationTestCompile "org.testcontainers:postgresql"
+}
