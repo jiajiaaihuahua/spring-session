@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<input id="userid" type="hidden" th:value="${user.id}" />
+<input id="headPortrait" type="hidden" th:value="${user.headPortrait}" />
+<input id="backgroundImage" type="hidden" th:value="${user.backgroundImage}" />
+
+<div id="profile">
+	<div id="close">
+		<div class="cy"></div>
+		<div class="cx"></div>
+	</div>
+	<p th:text="${user.name}"></p>
+	<span th:text="${user.autograph}"></span>
+</div>
+<div id="chat-messages">
+	<label th:text="${week}"></label>
+	<label id="more" style = "cursor:hand">more</label>
+</div>
+<div id="sendmessage">
+	<input id="context" type="text" autofocus = "autofocus" />
+	<button id="send"></button>
+</div>
+<script src="scripts/script-chat.js"></script>
+</html>

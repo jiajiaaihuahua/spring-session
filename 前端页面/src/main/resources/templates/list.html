@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div id="friendslist">
+	<div id="topmenu">聊天框</div>
+	<div id="friends">
+		<div class="friend" th:each="item,iterStat : ${userList}">
+			<input class="uid" type="hidden" th:value="${item.id}" /> <img
+				th:src="@{images/{m}(m=${item.headPortrait})}" />
+			<p>
+				<strong th:text="${item.name}"></strong> <span
+					th:text="${item.autograph}"></span>
+			</p>
+			<div th:if="${item.status == '1'}" class="status available"></div>
+			<div th:if="${item.status == '2'}" class="status away"></div>
+			<div th:if="${item.status == '3'}" class="status inactive"></div>
+		</div>
+		<div id="search">
+			<input type="text" id="searchfield" value="搜索..." />
+		</div>
+	</div>
+</div>
+<script src="scripts/script-list.js"></script>
+
+
+</html>
